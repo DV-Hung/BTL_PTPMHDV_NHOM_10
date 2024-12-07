@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|d:\\cac_mon_hoc\\ki5\\final_hdv\\ptpm_hdv\\ptpm_hdv\\goatbooking_test\\goatbooking\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|solutionrelative:goatbooking\\controllers\\roomscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|d:\\cac_mon_hoc\\ki5\\final_hdv\\ptpm_hdv\\ptpm_hdv\\goatbooking_test\\goatbooking\\controllers\\homestayscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|solutionrelative:goatbooking\\controllers\\homestayscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|d:\\cac_mon_hoc\\ki5\\final_hdv\\ptpm_hdv\\ptpm_hdv\\goatbooking_test\\goatbooking\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|solutionrelative:goatbooking\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|d:\\cac_mon_hoc\\ki5\\final_hdv\\ptpm_hdv\\ptpm_hdv\\goatbooking_test\\goatbooking\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|solutionrelative:goatbooking\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|d:\\cac_mon_hoc\\ki5\\final_hdv\\ptpm_hdv\\ptpm_hdv\\goatbooking_test\\goatbooking\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|solutionrelative:goatbooking\\controllers\\bookingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|d:\\cac_mon_hoc\\ki5\\final_hdv\\ptpm_hdv\\ptpm_hdv\\goatbooking_test\\goatbooking\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F3975C1-A06F-4EC6-9C95-4C9902AD6EB2}|GOATBOOKING\\GOATBOOKING.csproj|solutionrelative:goatbooking\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 351,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomsController.cs",
+              "DocumentMoniker": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\RoomsController.cs",
+              "RelativeDocumentMoniker": "GOATBOOKING\\Controllers\\RoomsController.cs",
+              "ToolTip": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\RoomsController.cs*",
+              "RelativeToolTip": "GOATBOOKING\\Controllers\\RoomsController.cs*",
+              "ViewState": "AgIAACUAAAAAAAAAAAAswD0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T05:53:43.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookingsController.cs",
+              "DocumentMoniker": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\BookingsController.cs",
+              "RelativeDocumentMoniker": "GOATBOOKING\\Controllers\\BookingsController.cs",
+              "ToolTip": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\BookingsController.cs",
+              "RelativeToolTip": "GOATBOOKING\\Controllers\\BookingsController.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T05:34:10.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "GOATBOOKING\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "GOATBOOKING\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAADwv0QAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T14:22:44.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Models\\User.cs",
+              "RelativeDocumentMoniker": "GOATBOOKING\\Models\\User.cs",
+              "ToolTip": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Models\\User.cs",
+              "RelativeToolTip": "GOATBOOKING\\Models\\User.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T18:16:21.937Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 277,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReviewsController.cs",
+              "DocumentMoniker": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\ReviewsController.cs",
+              "RelativeDocumentMoniker": "GOATBOOKING\\Controllers\\ReviewsController.cs",
+              "ToolTip": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\ReviewsController.cs",
+              "RelativeToolTip": "GOATBOOKING\\Controllers\\ReviewsController.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAowHoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T05:58:26.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomestaysController.cs",
+              "DocumentMoniker": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\HomestaysController.cs",
+              "RelativeDocumentMoniker": "GOATBOOKING\\Controllers\\HomestaysController.cs",
+              "ToolTip": "D:\\cac_mon_hoc\\Ki5\\FINAL_HDV\\PTPM_HDV\\PTPM_HDV\\GOATBOOKING_test\\GOATBOOKING\\Controllers\\HomestaysController.cs",
+              "RelativeToolTip": "GOATBOOKING\\Controllers\\HomestaysController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA1wDAAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T05:34:18.429Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

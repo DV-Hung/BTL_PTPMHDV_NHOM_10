@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nhận Xét Homestay</title>
+    <style>
+      body {
+        background-image: url("https://hieusuro.com/wp-content/uploads/2019/06/cach-tang-danh-gia-5-sao-san-sendo.jpg"); /* Đường dẫn đến ảnh */
+        background-size: cover; /* Đảm bảo ảnh phủ đầy màn hình */
+        background-repeat: no-repeat; /* Không lặp lại ảnh */
+        background-position: center; /* Căn giữa ảnh */
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        background-color: #ffffff;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+      input,
+      textarea,
+      select,
+      button {
+        width: 100%;
+        box-sizing: border-box; /* Bao gồm padding và border trong kích thước */
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      form {
+        max-width: 400px; /* Đặt chiều ngang tối đa cho form */
+        margin: 0 auto; /* Căn giữa form */
+      }
+      button {
+        background-color: #0071c2;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #00165f;
+      }
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      .success {
+        color: green;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      textarea {
+        width: 100%; /* Đảm bảo textarea chiếm toàn bộ chiều ngang container */
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical; /* Cho phép thay đổi kích thước chỉ theo chiều dọc */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Nhận Xét Homestay</h1>
+    <form id="reviewForm">
+      <div>
+        <label for="fullName">Tên đầy đủ:</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          placeholder="Nhập tên đầy đủ của bạn"
+        />
+      </div>
+      <div>
+        <label for="title">Tiêu đề nhận xét:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Nhập tiêu đề nhận xét"
+        />
+      </div>
+      <div>
+        <label for="content">Nội dung nhận xét:</label>
+        <textarea
+          id="content"
+          name="content"
+          rows="5"
+          placeholder="Chia sẻ trải nghiệm của bạn"
+        ></textarea>
+      </div>
+      <div>
+        <label for="rating">Đánh giá:</label>
+        <select id="rating" name="rating">
+          <option value="1">1 Sao</option>
+          <option value="2">2 Sao</option>
+          <option value="3">3 Sao</option>
+          <option value="4">4 Sao</option>
+          <option value="5">5 Sao</option>
+        </select>
+      </div>
+      <button type="button" onclick="submitReview()">Gửi Nhận Xét</button>
+      <div id="message" class="error" style="display: none"></div>
+    </form>
+
+    <script>
+      function submitReview() {
+        const fullName = document.getElementById("fullName").value.trim();
+        const title = document.getElementById("title").value.trim();
+        const content = document.getElementById("content").value.trim();
+        const rating = document.getElementById("rating").value;
+        const message = document.getElementById("message");
+
+        message.style.display = "none";
+        message.className = "error";
+
+        if (!fullName || !title || !content || !rating) {
+          message.textContent =
+            "Vui lòng điền đầy đủ thông tin để gửi nhận xét!";
+          message.style.display = "block";
+          return;
+        }
+
+        if (content.length > 1000) {
+          message.textContent =
+            "Nội dung nhận xét quá dài, vui lòng rút ngắn nội dung!";
+          message.style.display = "block";
+          return;
+        }
+
+        // Lưu dữ liệu vào localStorage
+        const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        reviews.push({ fullName, title, content, rating });
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+
+        // Hiển thị thông báo thành công
+        message.textContent =
+          "Gửi nhận xét thành công! Cảm ơn bạn đã chia sẻ trải nghiệm.";
+        message.style.display = "block";
+        message.className = "success";
+
+        // Reset form
+        document.getElementById("reviewForm").reset();
+      }
+    </script>
+  </body>
+</html>

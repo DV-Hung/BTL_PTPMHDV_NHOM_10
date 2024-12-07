@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phiếu Đặt Phòng</title>
+    <style>
+      body {
+        background-image: url("https://th.bing.com/th/id/OIP.7CFEqLqTv8jB_nF8mr5N2wHaHa?w=480&h=480&rs=1&pid=ImgDetMain"); /* Đường dẫn đến ảnh */
+
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+      .booking-form {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .booking-form h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        margin-right: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #007bff;
+      }
+
+      .form-group textarea {
+        resize: none;
+        height: 80px;
+      }
+
+      .form-actions {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .form-actions button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+
+      .form-actions button:hover {
+        background-color: #0056b3;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: -15px;
+        margin-bottom: 10px;
+      }
+
+      .success-message {
+        color: green;
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Form -->
+    <div class="booking-form">
+      <h2>Phiếu Đặt Phòng</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="homestayName">Tên Homestay</label>
+          <input type="text" id="homestayName" value="Homestay ABC" readonly />
+        </div>
+        <div class="form-group">
+          <label for="address">Địa Chỉ</label>
+          <input
+            type="text"
+            id="address"
+            value="123 Đường ABC, Thành Phố XYZ"
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label for="price">Giá</label>
+          <input type="text" id="price" value="1,500,000 VND" readonly />
+        </div>
+        <div class="form-group">
+          <label for="description">Mô Tả</label>
+          <textarea id="description" readonly>
+Homestay lý tưởng với đầy đủ tiện nghi...</textarea
+          >
+        </div>
+        <div class="form-group">
+          <label for="name">Tên Người Đặt</label>
+          <input type="text" id="name" value="Nguyễn Văn A" />
+          <div class="error-message" id="nameError"></div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" value="example@gmail.com" />
+          <div class="error-message" id="emailError"></div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Số Điện Thoại</label>
+          <input type="text" id="phone" value="0123456789" />
+          <div class="error-message" id="phoneError"></div>
+        </div>
+        <div class="form-group">
+          <label for="checkIn">Ngày Đăng Ký</label>
+          <input type="date" id="checkIn" value="2024-12-01" />
+        </div>
+        <div class="form-group">
+          <label for="checkOut">Ngày Trả Phòng</label>
+          <input type="date" id="checkOut" value="2024-12-04" />
+        </div>
+        <div class="form-group">
+          <label for="totalStay">Tổng Thời Gian Lưu Trú</label>
+          <input type="text" id="totalStay" value="3 Ngày" readonly />
+        </div>
+        <div class="form-actions">
+          <button type="button" onclick="goToNextStep()">
+            Tiếp Theo: Chi Tiết Cuối Cùng
+          </button>
+        </div>
+      </form>
+      <div id="resultMessage" class="success-message"></div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      function goToNextStep() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+
+        let isValid = true;
+
+        // Clear previous error messages
+        document.getElementById("nameError").innerText = "";
+        document.getElementById("emailError").innerText = "";
+        document.getElementById("phoneError").innerText = "";
+
+        // Validate name
+        if (name === "") {
+          document.getElementById("nameError").innerText =
+            "Tên không được để trống.";
+          isValid = false;
+        }
+
+        // Validate email
+        const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        if (!emailPattern.test(email)) {
+          document.getElementById("emailError").innerText =
+            "Email không hợp lệ.";
+          isValid = false;
+        }
+
+        // Validate phone
+        const phonePattern = /^[0-9]{10,11}$/;
+        if (!phonePattern.test(phone)) {
+          document.getElementById("phoneError").innerText =
+            "Số điện thoại không hợp lệ.";
+          isValid = false;
+        }
+
+        // Show success or stop if invalid
+        if (isValid) {
+          document.getElementById("resultMessage").innerText =
+            "Vui lòng kiểm tra thông tin của bạn ở bước tiếp theo!";
+        }
+      }
+    </script>
+  </body>
+</html>

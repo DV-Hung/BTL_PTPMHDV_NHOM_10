@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Booking Interface</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+
+      .container {
+        max-width: 950px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid #e3e3e3;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .hotel-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 15px;
+
+        margin: 20px auto;
+        width: 90%;
+        max-width: 900px;
+      }
+
+      .hotel-details {
+        flex: 2;
+      }
+
+      .ratings {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .stars {
+        color: #f5c518; /* Gold for stars */
+        font-size: 1.2em;
+        margin-right: 10px;
+      }
+
+      .features {
+        display: flex;
+        gap: 10px;
+      }
+
+      .feature {
+        font-size: 0.9em;
+        background: #ffd700;
+        padding: 3px 8px;
+        border-radius: 5px;
+        color: #333;
+      }
+
+      .feature.green {
+        background: #e6ffea;
+        color: #2ecc71; /* Green */
+      }
+
+      .hotel-name {
+        font-size: 1.4em;
+        margin: 5px 0;
+        color: #333;
+      }
+
+      .address {
+        font-size: 0.9em;
+        color: #555;
+      }
+
+      .address .icon {
+        margin-right: 5px;
+      }
+
+      .highlight {
+        color: #007bff;
+        font-weight: bold;
+      }
+
+      .highlight a {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      .highlight a:hover {
+        text-decoration: underline;
+      }
+
+      .booking-action {
+        flex: 1;
+        text-align: right;
+      }
+
+      .btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #077ef5;
+      }
+
+      .price-info {
+        font-size: 0.9em;
+        margin-top: 10px;
+        color: #555;
+      }
+
+      .price {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .guarantee {
+        font-size: 0.85em;
+        color: #007bff;
+        margin-top: 5px;
+      }
+      /*Tìm*/
+      .button {
+        background-color: #0071c2;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #0a3a5f;
+      }
+
+      /* Availability Section */
+      .availability {
+        margin-bottom: 20px;
+      }
+
+      .date-picker label {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      .date-picker input,
+      .date-picker select {
+        margin: 0 10px 10px 0;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      /* Room Table */
+      .room_table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      .room_table th,
+      .room_table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      .room_table th {
+        background-color: #005ea6;
+        color: #ffffff;
+      }
+
+      .room_table td button {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        background-color: #0071c2;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .room_table td button:hover {
+        background-color: #005ea6;
+      }
+
+      /*Service*/
+      .service_table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #fff;
+      }
+
+      .service_table th,
+      .service_table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      .service_table th {
+        background-color: #005ea6;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .service_table td {
+        background-color: #fafafa;
+      }
+
+      .service_table tr:hover {
+        background-color: #f1f1f1; /* Hiệu ứng hover */
+      }
+
+      /* Đánh giá */
+      .reviews {
+        margin-top: 20px;
+      }
+
+      .rating-box {
+        display: inline-block;
+        background-color: #0071c2;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 3px;
+      }
+
+      .rating-text {
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 5px;
+        color: #ff2121;
+      }
+
+      .review-category {
+        margin-top: 10px;
+      }
+
+      .review-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .review-item {
+        display: flex; /* Căn các thành phần theo hàng ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        justify-content: space-between; /* Giữ khoảng cách hợp lý */
+        margin-bottom: 10px; /* Khoảng cách giữa các mục */
+      }
+
+      .review-item span:first-child {
+        min-width: 150px; /* Đảm bảo chiều rộng cố định cho nhãn */
+        text-align: left;
+      }
+
+      .review-item span:last-child {
+        min-width: 40px; /* Đảm bảo chiều rộng cố định cho điểm số */
+        text-align: right;
+      }
+
+      .progress-bar {
+        flex-grow: 1; /* Để thanh co giãn trong không gian còn lại */
+        max-width: 200px; /* Đảm bảo thanh có chiều dài cố định tối đa */
+        height: 6px;
+        background-color: #e4e4e4;
+        border-radius: 3px;
+        margin: 0 20px; /* Khoảng cách giữa thanh và nhãn/điểm số */
+        position: relative;
+      }
+
+      .progress {
+        height: 100%;
+        background-color: #0071c2;
+        border-radius: 3px;
+        width: 8.7%; /* Độ dài của thanh tiến trình (thay đổi theo giá trị) */
+      }
+      .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .image-large {
+        flex: 2;
+        position: relative;
+      }
+
+      .image-large img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      .image-small {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .image-small img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+      .nx a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .nx {
+     
+        background-color: #0071c2; /* Màu nền chính */
+        padding: 10px 20px; /* Kích thước nút */
+        border: none; /* Loại bỏ viền */
+        border-radius: 5px; /* Bo góc */
+        cursor: pointer; /* Con trỏ thay đổi khi hover */
+        font-size: 16px; /* Kích thước chữ */
+        transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu */
+    }
+    
+    .nx:hover {
+        background-color: #000000; /* Màu khi hover */
+        color: #000000; /* Đảm bảo màu chữ */
+    }
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .header button {
+          margin-top: 10px;
+          width: 100%;
+        }
+
+        .date-picker {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .date-picker input,
+        .date-picker select {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="hotel-info">
+        <div class="hotel-details">
+          <div class="ratings">
+            <span class="stars">5.0 ★</span>
+            <span class="features">
+              <span class="feature">🚖 Xe đưa đón sân bay</span>
+              <span class="feature green">🚖 Có taxi miễn phí</span>
+            </span>
+          </div>
+          <h2 class="hotel-name">New Siam Palace Ville Hotel</h2>
+          <p class="address">
+            <span class="icon">📍</span> 56 Trok Rong Mhai, Chao Fa Rd, Chao Fa
+            Rd, Chanasongkram, Phra Nakhon, 10200, Bangkok, Thái Lan –
+            <span class="highlight"></span>
+              <a href="#">Vị trí tuyệt vời -Hiển thị bản đồ</a></span
+            >
+          </p>
+        </div>
+        <div class="booking-action">
+          <button class="btn book-now">
+            <i class="fa fa-shopping-cart"></i> Đặt ngay
+          </button>
+          <p class="price-info">
+            <span class="price">US$48</span>
+          </p>
+          <p class="guarantee">🎯 Chúng Tôi Luôn Khớp Giá!</p>
+        </div>
+      </div>
+      <div class="image-gallery">
+        <div class="image-large">
+          <img
+            src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/427320055.jpg?k=d761581a02e01f7842c4964e1d187882d737d6592f9ffdcc982141ecd61f265f&o="
+            alt="Image 1"
+          />
+        </div>
+        <div class="image-small">
+          <img
+            src="https://cf.bstatic.com/xdata/images/hotel/max500/585565008.jpg?k=c916e5c83f61cdbcb3ff0ae707b8b9412b8aee04654d4f9c06ccc60dc9651e71&o="
+            alt="Image 2"
+          />
+          <img
+            src="https://cf.bstatic.com/xdata/images/hotel/max500/100500454.jpg?k=04f3a54654074afa801d6d66c88254f9989b85f6fb1e73436659eeae39943031&o="
+            alt="Image 3"
+          />
+        </div>
+      </div>
+
+      <!-- Phòng trống Section -->
+      <div class="availability">
+        <h2 class="availability-text" style="margin-top: 5%">Phòng trống</h2>
+        <div class="date-picker">
+          <label for="checkin">Ngày nhận phòng</label>
+          <input type="date" id="checkin" />
+          <label for="checkout">Ngày trả phòng</label>
+          <input type="date" id="checkout" />
+          <button class="button"><i class="fa fa-search"></i> Tìm</button>
+        </div>
+      </div>
+
+      <!-- Room Options -->
+      <table class="room_table">
+        <thead>
+          <tr>
+            <th>Tên phòng</th>
+            <th>Loại Phòng</th>
+            <th>Giá</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+
+      <table class="service_table">
+        <h2 class="service-text" style="margin-top: 20px">
+          Các nhận xét
+        </h2>
+        <thead>
+          <tr>
+            <th>Tên người nhận xét</th>
+            <th>nhận xét</th>
+            <th>Đánh giá</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+
+      <div class="reviews">
+        <h2>Đánh giá của khách</h2>
+
+        <p>
+          <span class="rating-box">5.0 ★</span>
+          <span class="rating-text"> Tốt</span> · 3.545 đánh giá
+        </p>
+        <h3>Hạng mục:</h3>
+        <div class="review-category">
+          <div class="review-item">
+            <span>Nhân viên </span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 87%"></div>
+            </div>
+            <span>8,7</span>
+          </div>
+          <div class="review-item">
+            <span>Thoải mái</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 78%"></div>
+            </div>
+            <span>7,8</span>
+          </div>
+          <div class="review-item">
+            <span>WiFi miễn phí</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 76%"></div>
+            </div>
+            <span>7,6</span>
+          </div>
+          <div class="review-item">
+            <span>Tiện nghi</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 75%"></div>
+            </div>
+            <span>7,5</span>
+          </div>
+          <div class="review-item">
+            <span>Đáng giá tiền</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 80%"></div>
+            </div>
+            <span>8,0</span>
+          </div>
+          <div class="review-item">
+            <span>Địa điểm</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 89%"></div>
+            </div>
+            <span>8,9</span>
+          </div>
+          <div class="review-item">
+            <span>Sạch sẽ</span>
+            <div class="progress-bar">
+              <div class="progress" style="width: 78%"></div>
+            </div>
+            <span>7,8</span>
+          </div>
+        </div>
+      </div>
+      <button class="nx"><a href="nhanxet.html">Nhận xét</a></button>
+    </div>
+   
+  </body>
+</html>
